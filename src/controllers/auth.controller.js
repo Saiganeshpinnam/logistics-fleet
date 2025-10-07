@@ -16,7 +16,7 @@ export const register = async (req, res) => {
 
     const hash = await bcrypt.hash(password, 10);
     const user = await User.create({ name, email, password: hash, role });
-    return res.status(201).json({ id: user.id, name: user.name, email: user.email, role: user.role });
+    return res.status(201).json({ "User Created Successfully": { id: user.id, name: user.name, email: user.email, role: user.role } });
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }
@@ -34,6 +34,7 @@ export const login = async (req, res) => {
     if (!valid) return res.status(401).json({ message: 'Invalid credentials' });
 
     const token = jwt.sign({ id: user.id, role: user.role, name: user.name }, JWT_SECRET, { expiresIn: '8h' });
+    console.log(token)
     return res.json({ token, user: { id: user.id, name: user.name, email: user.email, role: user.role } });
   } catch (err) {
     return res.status(500).json({ message: err.message });

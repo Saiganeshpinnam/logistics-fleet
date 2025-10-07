@@ -2,12 +2,12 @@
   "name": "logistics-backend",
   "version": "1.0.0",
   "type": "module",
-"scripts": {
-  "start": "node src/index.js",
-  "dev": "nodemon src/index.js",
-  "seed": "node src/scripts/seed.js"
-},
-"dependencies": {
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "seed": "node src/scripts/seed.js"
+  },
+  "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
@@ -21,5 +21,18 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
-  }
+  },
+  "description": "This is a minimal, ready-to-run backend for the Logistics & Fleet Management System: - Node.js + Express - Sequelize ORM (defaults to SQLite for quick local runs) - Socket.io for real-time location updates - JWT auth (Admin/Driver/Customer) - Models: User, Vehicle, Delivery, Tracking - Conflict detection for scheduling",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saiganeshpinnam/logistics-fleet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saiganeshpinnam/logistics-fleet/issues"
+  },
+  "homepage": "https://github.com/Saiganeshpinnam/logistics-fleet#readme"
 }
